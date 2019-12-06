@@ -1,0 +1,125 @@
+    digraph arbol {
+    node [shape=plaintext]
+    rankdir =LR
+
+    inodo1 [label=<
+    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#2e61f4">
+    <TR> <TD colspan="2">Inodo1</TD> </TR>
+    <TR >
+        <TD >Tipo</TD>
+        <TD PORT="f1">1</TD>
+    </TR>
+    <TR >
+        <TD >Tamaño</TD>
+        <TD PORT="f2">0</TD>
+    </TR>
+    <TR >
+        <TD >Directo1</TD>
+        <TD PORT="f3">3</TD>
+    </TR>
+    <TR >
+        <TD >Indirecto1</TD>
+        <TD PORT="f4">4</TD>
+    </TR>
+    </TABLE>
+    >];
+
+    inodo2 [label=<
+    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#2e61f4">
+    <TR> <TD colspan="2">Inodo2</TD> </TR>
+    <TR >
+        <TD >Tipo</TD>
+        <TD PORT="f1">1</TD>
+    </TR>
+    <TR >
+        <TD >Tamaño</TD>
+        <TD PORT="f2">0</TD>
+    </TR>
+    <TR >
+        <TD >Directo1</TD>
+        <TD PORT="f3">3</TD>
+    </TR>
+    <TR >
+        <TD >Indirecto1</TD>
+        <TD PORT="f4">4</TD>
+    </TR>
+    </TABLE>
+    >];
+
+
+
+
+    BlockCarpeta1 [label=<
+    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR=" #18cc12 ">
+    <TR> <TD colspan="2">BlockCarpeta</TD> </TR>
+    <TR >
+        <TD >.</TD>
+        <TD PORT="f1">mid dle</TD>
+    </TR>
+    <TR >
+        <TD >..</TD>
+        <TD PORT="f2">mid dle</TD>
+    </TR>
+    </TABLE>
+    >];
+
+
+
+    BlockArchivo1 [label=<
+    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#e6f721">
+    <TR> <TD >BlockArchivo</TD> </TR>
+    <TR >
+        <TD >contenido del texto</TD>
+    </TR>
+    </TABLE>
+    >];
+
+    BlockApuntador1 [label=<
+    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#f9a909">
+    <TR> <TD >BlockApuntador</TD> </TR>
+    <TR >
+        <TD PORT="f1">1</TD>
+    </TR>
+    <TR >
+        <TD PORT="f2">6</TD>
+    </TR>
+    <TR >
+        <TD PORT="f3">-1</TD>
+    </TR>
+    <TR >
+        <TD PORT="f4">-1</TD>
+    </TR>
+
+    </TABLE>
+    >];
+
+
+    BlockCarpeta2 [label=<
+    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR=" #18cc12 ">
+    <TR> <TD colspan="2">BlockCarpeta</TD> </TR>
+    <TR >
+        <TD >.</TD>
+        <TD PORT="f1">6</TD>
+    </TR>
+    <TR >
+        <TD >home</TD>
+        <TD PORT="f2">4</TD>
+    </TR>
+    </TABLE>
+    >];
+
+
+
+    inodo1:f3 -> BlockCarpeta1;
+    inodo1:f4 -> BlockApuntador1;
+
+    BlockApuntador1:f1 -> BlockCarpeta2;
+
+
+    BlockCarpeta2:f2 -> inodo2
+    inodo2:f3 -> BlockArchivo1;
+
+
+
+
+}
